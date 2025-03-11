@@ -37,8 +37,8 @@ global.baileys = 'V 6.7.9'
 global.languaje = 'Español'
 global.vs = '2.1.5'
 global.vsJB = '5.0'
-global.nameqr = 'Vegeta Super - Bot'
-global.namebot = '✿◟Vegeta-Sυper-Bσƚ◞✿'
+global.nameqr = '𝐁𝐔𝐋𝐌𝐀-𝐁𝐎𝐓-𝐌𝐃'
+global.namebot = '✿◟𝐁𝐔𝐋𝐌𝐀-𝐁𝐎𝐓-𝐌𝐃◞✿'
 global.sessions = 'Sessions'
 global.jadi = 'JadiBots' 
 global.yukiJadibts = true
@@ -46,16 +46,16 @@ global.yukiJadibts = true
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.packsticker =`°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°\n✦ Bσƚ:\n✦ Pɾσριҽƚαɾισ:\n✦ Fҽƈԋα ԃҽ Cɾҽαƈιóɳ:\n✦ Hσɾα ԃҽ Cɾҽαƈιóɳ:\n♾━━━━━━━━`
-global.packsticker2 = `━━━━━━━━♾\n⪛·:*¨♱𝙑𝙀𝙂𝙀𝙏𝘼_𝙎𝙐𝙋𝙀𝙍_𝘽𝙊𝙏-𝙑12♱ ¨*:·⪜\n⋆ ༺Ƹ (ꐦ ◣‸◢) 𝙼𝙰𝚁𝚃𝙸𝙽𝙴𝚉\n⇝ ${moment.tz('Mexico/Baja California').format('02/07/2007')}\n⇝ ${moment.tz('Mexico/Baja california').format('08:07:2007')} \n°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°\n\nѕτιϲκєя ϐγ: 𝙑𝙀𝙂𝙀𝙏𝘼_𝙎𝙐𝙋𝙀𝙍_𝘽𝙊𝙏`
+global.packsticker2 = `━━━━━━━━♾\n⪛·:*¨♱𝐁𝐔𝐋𝐌𝐀-𝐁𝐎𝐓-𝐌𝐃♱ ¨*:·⪜\n⋆ ༺Ƹ (ꐦ ◣‸◢) 𝙼𝙰𝚁𝚃𝙸𝙽𝙴𝚉\n⇝ ${moment.tz('Mexico/Baja California').format('02/07/2007')}\n⇝ ${moment.tz('Mexico/Baja california').format('08:07:2007')} \n°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°\n\nѕτιϲκєя ϐγ: 𝐁𝐔𝐋𝐌𝐀-𝐁𝐎𝐓-𝐌𝐃`
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.packname = `⪛✰¨♱𝙑𝙀𝙂𝙀𝙏𝘼_𝙎𝙐𝙋𝙀¨*:·`
-global.botname = '·:*¨♱𝙑𝙀𝙂𝙀𝙏𝘼_𝙎𝙐𝙋𝙀𝙍_𝘽𝙊𝙏-𝙑12♱ ¨*:·'
-global.wm = 'ৎ୭࠭͢𓆪͟͞ 𝙑𝙀𝙂𝙀𝙏𝘼_𝙎𝙐𝙋𝙀𝙍_𝘽𝙊𝙏'
+global.packname = `⪛✰¨♱𝐁𝐔𝐋𝐌𝐀-𝐁𝐎𝐓-𝐌𝐃¨*:·`
+global.botname = '·:*¨♱𝐁𝐔𝐋𝐌𝐀-𝐁𝐎𝐓-𝐌𝐃♱ ¨*:·'
+global.wm = 'ৎ୭࠭͢𓆪͟͞ 𝐁𝐔𝐋𝐌𝐀-𝐁𝐎𝐓-𝐌𝐃'
 global.author = 'Made By (ꐦ ◣‸◢) 𝙼𝙰𝚁𝚃𝙸𝙽𝙴𝚉'
 global.dev = '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ  (ꐦ ◣‸◢) 𝙼𝙰𝚁𝚃𝙸𝙽𝙴𝚉'
-global.textbot = ' (ꐦ ◣‸◢) 𝙼𝙰𝚁𝚃𝙸𝙽𝙴𝚉 • P·:*¨♱𝙑𝙀𝙂𝙀𝙏𝘼_𝙎𝙐𝙋𝙀𝙍_𝘽𝙊𝙏-𝙑12♱ ¨*:·'
+global.textbot = ' (ꐦ ◣‸◢) 𝙼𝙰𝚁𝚃𝙸𝙽𝙴𝚉 • P·:*¨♱𝐁𝐔𝐋𝐌𝐀-𝐁𝐎𝐓-𝐌𝐃♱ ¨*:·'
 
 global.moneda = 'dragones'
 global.welcom1 = 'Edita Con #setwelcome'
