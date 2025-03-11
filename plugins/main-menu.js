@@ -28,7 +28,7 @@ let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? c
 let mentionedJid = [who]
 let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://i.ibb.co/GtYw361/Yuki.jpg')
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
-const vid = ['https://files.catbox.moe/ihkqul.mp4', 'https://files.catbox.moe/ihkqul.mp4', 'https://files.catbox.moe/ihkqul.mp4']
+const vid = ['https://files.catbox.moe/mo1jzw.mp4', 'https://files.catbox.moe/mo1jzw.mp4', 'https://files.catbox.moe/mo1jzw.mp4']
 
 let menu = `𔓕꯭  ꯭ :*¨★♱𝐁𝐔𝐋𝐌𝐀-𝐁𝐎𝐓-𝐌𝐃♱★ ¨*:·  ꯭𔓕
 
