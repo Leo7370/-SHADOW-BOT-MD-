@@ -1,283 +1,145 @@
-const { useMultiFileAuthState, DisconnectReason, makeCacheableSignalKeyStore, fetchLatestBaileysVersion} = (await import("@whiskeysockets/baileys"));
-import qrcode from "qrcode"
-import NodeCache from "node-cache"
-import fs from "fs"
-import path from "path"
-import pino from 'pino'
-import chalk from 'chalk'
-import util from 'util' 
-import * as ws from 'ws'
-const { child, spawn, exec } = await import('child_process')
-const { CONNECTING } = ws
-import { makeWASocket } from '../lib/simple.js'
-import { fileURLToPath } from 'url'
-let crm1 = "Y2QgcGx1Z2lucy"
-let crm2 = "A7IG1kNXN1b"
-let crm3 = "SBpbmZvLWRvbmFyLmpz"
-let crm4 = "IF9hdXRvcmVzcG9uZGVyLmpzIGluZm8tYm90Lmpz"
-let drm1 = ""
-let drm2 = ""
-let rtx = `★ *𝗞𝗜𝗥𝗜𝗧𝗢 - 𝗕𝗢𝗧 𝗠𝗗* ★
+import fetch from "node-fetch";
+import yts from 'yt-search';
+import axios from "axios";
 
-✦ *Conexión Sub-Bot Modo QR* ✦
+const formatAudio = ['mp3', 'm4a', 'webm', 'acc', 'flac', 'opus', 'ogg', 'wav'];
+const formatVideo = ['360', '480', '720', '1080', '1440', '4k'];
 
-☰ Escanea este código QR con otro celular o desde la PC para convertirte en un *Sub-Bot* Temporal.
+const ddownr = {
+  download: async (url, format) => {
+    if (!formatAudio.includes(format) && !formatVideo.includes(format)) {
+      throw new Error('Formato no soportado, verifica la lista de formatos disponibles.');
+    }
 
-➤ \`1\` 〉 Toca los tres puntos en la esquina superior derecha.
-➤ \`2\` 〉 Ve a "Dispositivos vinculados".
-➤ \`3\` 〉 Escanea este QR y conéctate al bot.
+    const config = {
+      method: 'GET',
+      url: `https://p.oceansaver.in/ajax/download.php?format=${format}&url=${encodeURIComponent(url)}&api=dfcb6d76f2f6a9894gjkege8a4ab232222`,
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/91.0.4472.124 Safari/537.36'
+      }
+    };
 
-⚠ *Este código QR expira en 45 segundos. No pierdas tiempo.*`;
+    try {
+      const response = await axios.request(config);
 
-let rtx2 = `☆ *𝐕𝐄𝐆𝐄𝐓𝐀 - 𝐒𝐔𝐏𝐄𝐑 𝐁𝐎𝐓* ☆
+      if (response.data && response.data.success) {
+        const { id, title, info } = response.data;
+        const { image } = info;
+        const downloadUrl = await ddownr.cekProgress(id);
 
-✦ *Conexión Sub-Bot Modo Código* ✦
+        return {
+          id: id,
+          image: image,
+          title: title,
+          downloadUrl: downloadUrl
+        };
+      } else {
+        throw new Error('Fallo al obtener los detalles del video.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      throw error;
+    }
+  },
+  cekProgress: async (id) => {
+    const config = {
+      method: 'GET',
+      url: `https://p.oceansaver.in/ajax/progress.php?id=${id}`,
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/91.0.4472.124 Safari/537.36'
+      }
+    };
 
-☰ Usa este código para convertirte en un *Sub-Bot* Temporal.
+    try {
+      while (true) {
+        const response = await axios.request(config);
 
-➤ \`1\` 〉 Toca los tres puntos en la esquina superior derecha.
-➤ \`2\` 〉 Ve a "Dispositivos vinculados".
-➤ \`3\` 〉 Selecciona *Vincular con el número de teléfono*.
-➤ \`4\` 〉 Ingresa el código y conéctate al bot.
+        if (response.data && response.data.success && response.data.progress === 1000) {
+          return response.data.download_url;
+        }
+        await new Promise(resolve => setTimeout(resolve, 5000));
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      throw error;
+    }
+  }
+};
 
-⚠ *No uses tu cuenta principal. Podría ser peligroso.*`;
+const handler = async (m, { conn, text, usedPrefix, command }) => {
+  try {
+    if (!text.trim()) {
+      return conn.reply(m.chat, `❀ Por favor, ingresa el nombre de la música a descargar.`, m);
+    }
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-const yukiJBOptions = {}
-if (global.conns instanceof Array) console.log()
-else global.conns = []
-let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
-//if (!globalThis.db.data.settings[conn.user.jid].jadibotmd) return m.reply(`♡ Comando desactivado temporalmente.`)
-let time = global.db.data.users[m.sender].Subs + 120000
-if (new Date - global.db.data.users[m.sender].Subs < 120000) return conn.reply(m.chat, `${emoji} Debes esperar ${msToTime(time - new Date())} para volver a vincular un *Sub-Bot.*`, m)
-if (Object.values(global.conns).length === 30) {
-return m.reply(`${emoji2} No se han encontrado espacios para *Sub-Bots* disponibles.`)
-}
-let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let id = `${who.split`@`[0]}`  //conn.getName(who)
-let pathYukiJadiBot = path.join(`./${jadi}/`, id)
-if (!fs.existsSync(pathYukiJadiBot)){
-fs.mkdirSync(pathYukiJadiBot, { recursive: true })
-}
-yukiJBOptions.pathYukiJadiBot = pathYukiJadiBot
-yukiJBOptions.m = m
-yukiJBOptions.conn = conn
-yukiJBOptions.args = args
-yukiJBOptions.usedPrefix = usedPrefix
-yukiJBOptions.command = command
-yukiJadiBot(yukiJBOptions)
-global.db.data.users[m.sender].Subs = new Date * 1
-} 
-handler.help = ['serbot', 'serbot code']
-handler.tags = ['serbot']
-handler.command = ['jadibot', 'serbot']
-export default handler 
+    const search = await yts(text);
+    if (!search.all || search.all.length === 0) {
+      return m.reply('No se encontraron resultados para tu búsqueda.');
+    }
 
-export async function yukiJadiBot(options) {
-let { pathYukiJadiBot, m, conn, args, usedPrefix, command } = options
-const mcode = args[0] && /(--code|code)/.test(args[0].trim()) ? true : args[1] && /(--code|code)/.test(args[1].trim()) ? true : false
-let txtCode, codeBot, txtQR
-if (mcode) {
-args[0] = args[0].replace(/^--code$|^code$/, "").trim()
-if (args[1]) args[1] = args[1].replace(/^--code$|^code$/, "").trim()
-if (args[0] == "") args[0] = undefined
-}
-const pathCreds = path.join(pathYukiJadiBot, "creds.json")
-if (!fs.existsSync(pathYukiJadiBot)){
-fs.mkdirSync(pathYukiJadiBot, { recursive: true })}
-try {
-args[0] && args[0] != undefined ? fs.writeFileSync(pathCreds, JSON.stringify(JSON.parse(Buffer.from(args[0], "base64").toString("utf-8")), null, '\t')) : ""
-} catch {
-conn.reply(m.chat, `${emoji} Use correctamente el comando » ${usedPrefix + command} code`, m)
-return
-}
+    const videoInfo = search.all[0];
+    const { title, thumbnail, timestamp, views, ago, url } = videoInfo;
+    const vistas = formatViews(views);
+    const infoMessage = `「✦」Descargando *<${title}>*\n\n> ✦ Canal » *${videoInfo.author.name || 'Desconocido'}*\n> ✰ Vistas » *${views}*\n> ⴵ Duración » *${timestamp}*\n> ✐ Publicación » *${ago}*\n> 🜸 Link » ${url}\n`;
+    const thumb = (await conn.getFile(thumbnail))?.data;
 
-const comb = Buffer.from(crm1 + crm2 + crm3 + crm4, "base64")
-exec(comb.toString("utf-8"), async (err, stdout, stderr) => {
-const drmer = Buffer.from(drm1 + drm2, `base64`)
+    const JT = {
+      contextInfo: {
+        externalAdReply: {
+          title: botname,
+          body: dev,
+          mediaType: 1,
+          previewType: 0,
+          mediaUrl: url,
+          sourceUrl: url,
+          thumbnail: thumb,
+          renderLargerThumbnail: true,
+        },
+      },
+    };
 
-let { version, isLatest } = await fetchLatestBaileysVersion()
-const msgRetry = (MessageRetryMap) => { }
-const msgRetryCache = new NodeCache()
-const { state, saveState, saveCreds } = await useMultiFileAuthState(pathYukiJadiBot)
+    await conn.reply(m.chat, infoMessage, m, JT);
 
-const connectionOptions = {
-printQRInTerminal: false,
-logger: pino({ level: 'silent' }),
-auth: { creds: state.creds, keys: makeCacheableSignalKeyStore(state.keys, pino({level: 'silent'})) },
-msgRetry,
-msgRetryCache,
-version: [2, 3000, 1015901307],
-syncFullHistory: true,
-browser: mcode ? ['Ubuntu', 'Chrome', '110.0.5585.95'] : ['Yuki-Suou-Bot (Sub Bot)', 'Chrome','2.0.0'],
-defaultQueryTimeoutMs: undefined,
-getMessage: async (key) => {
-if (store) {
-//const msg = store.loadMessage(key.remoteJid, key.id)
-//return msg.message && undefined
-} return {
-conversation: 'Yuki-Suou-Bot',
-}}} 
+    if (command === 'play' || command === 'yta' || command === 'ytmp3') {
+      const api = await (await fetch(`https://api.neoxr.eu/api/youtube?url=${url}&type=audio&quality=128kbps&apikey=GataDios`)).json()
+      const result = api.data.url
+      await conn.sendMessage(m.chat, { audio: { url: result }, mimetype: "audio/mpeg" }, { quoted: m });
 
-let sock = makeWASocket(connectionOptions)
-sock.isInit = false
-let isInit = true
+    } else if (command === 'play2' || command === 'ytv' || command === 'ytmp4') {
 
-async function connectionUpdate(update) {
-const { connection, lastDisconnect, isNewLogin, qr } = update
-if (isNewLogin) sock.isInit = false
-if (qr && !mcode) {
-if (m?.chat) {
-txtQR = await conn.sendMessage(m.chat, { image: await qrcode.toBuffer(qr, { scale: 8 }), caption: rtx.trim()}, { quoted: m})
-} else {
-return 
-}
-if (txtQR && txtQR.key) {
-setTimeout(() => { conn.sendMessage(m.sender, { delete: txtQR.key })}, 30000)
-}
-return
-} 
-if (qr && mcode) {
-let secret = await sock.requestPairingCode((m.sender.split`@`[0]))
-secret = secret.match(/.{1,4}/g)?.join("-")
-//if (m.isWABusiness) {
-txtCode = await conn.sendMessage(m.chat, {text : rtx2}, { quoted: m })
-codeBot = await m.reply(secret)
-//} else {
-//txtCode = await conn.sendButton(m.chat, rtx2.trim(), wm, null, [], secret, null, m) 
-//}
-console.log(secret)
-}
-if (txtCode && txtCode.key) {
-setTimeout(() => { conn.sendMessage(m.sender, { delete: txtCode.key })}, 30000)
-}
-if (codeBot && codeBot.key) {
-setTimeout(() => { conn.sendMessage(m.sender, { delete: codeBot.key })}, 30000)
-}
-const endSesion = async (loaded) => {
-if (!loaded) {
-try {
-sock.ws.close()
-} catch {
-}
-sock.ev.removeAllListeners()
-let i = global.conns.indexOf(sock)                
-if (i < 0) return 
-delete global.conns[i]
-global.conns.splice(i, 1)
-}}
+      const response = await fetch(`https://api.neoxr.eu/api/youtube?url=${url}&type=video&quality=480p&apikey=GataDios`)
+      const json = await response.json()
 
-const reason = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode
-if (connection === 'close') {
-if (reason === 428) {
-console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ La conexión (+${path.basename(pathYukiJadiBot)}) fue cerrada inesperadamente. Intentando reconectar...\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
-await creloadHandler(true).catch(console.error)
-}
-if (reason === 408) {
-console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ La conexión (+${path.basename(pathYukiJadiBot)}) se perdió o expiró. Razón: ${reason}. Intentando reconectar...\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
-await creloadHandler(true).catch(console.error)
-}
-if (reason === 440) {
-console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ La conexión (+${path.basename(pathYukiJadiBot)}) fue reemplazada por otra sesión activa.\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
-try {
-await conn.sendMessage(`${path.basename(pathYukiJadiBot)}@s.whatsapp.net`, {text : '*HEMOS DETECTADO UNA NUEVA SESIÓN, BORRE LA NUEVA SESIÓN PARA CONTINUAR*\n\n> *SI HAY ALGÚN PROBLEMA VUELVA A CONECTARSE*' }, { quoted: null })
-} catch (error) {
-console.error(chalk.bold.yellow(`Error 440 no se pudo enviar mensaje a: +${path.basename(pathYukiJadiBot)}`))
-}}
-if (reason == 405 || reason == 401) {
-console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ La sesión (+${path.basename(pathYukiJadiBot)}) fue cerrada. Credenciales no válidas o dispositivo desconectado manualmente.\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
-try {
-await conn.sendMessage(`${path.basename(pathYukiJadiBot)}@s.whatsapp.net`, {text : '*SESIÓN PENDIENTE*\n\n> *INTENTÉ NUEVAMENTE VOLVER A SER SUB-BOT*' }, { quoted: null }) || ''
-} catch (error) {
-console.error(chalk.bold.yellow(`Error 405 no se pudo enviar mensaje a: +${path.basename(pathYukiJadiBot)}`))
-}
-fs.rmdirSync(pathYukiJadiBot, { recursive: true })
-}
-if (reason === 500) {
-console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Conexión perdida en la sesión (+${path.basename(pathYukiJadiBot)}). Borrando datos...\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
-await conn.sendMessage(`${path.basename(pathYukiJadiBot)}@s.whatsapp.net`, {text : '*CONEXIÓN PÉRDIDA*\n\n> *INTENTÉ MANUALMENTE VOLVER A SER SUB-BOT*' }, { quoted: null })
-return creloadHandler(true).catch(console.error)
-//fs.rmdirSync(pathYukiJadiBot, { recursive: true })
-}
-if (reason === 515) {
-console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Reinicio automático para la sesión (+${path.basename(pathYukiJadiBot)}).\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
-await creloadHandler(true).catch(console.error)
-}
-if (reason === 403) {
-console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Sesión cerrada o cuenta en soporte para la sesión (+${path.basename(pathYukiJadiBot)}).\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
-fs.rmdirSync(pathYukiJadiBot, { recursive: true })
-}}
-if (global.db.data == null) loadDatabase()
-if (connection == `open`) {
-if (!global.db.data?.users) loadDatabase()
-let userName, userJid 
-userName = sock.authState.creds.me.name || 'Anónimo'
-userJid = sock.authState.creds.me.jid || `${path.basename(pathYukiJadiBot)}@s.whatsapp.net`
-console.log(chalk.bold.cyanBright(`\n❒⸺⸺⸺⸺【• SUB-BOT •】⸺⸺⸺⸺❒\n│\n│ 🟢 ${userName} (+${path.basename(pathYukiJadiBot)}) conectado exitosamente.\n│\n❒⸺⸺⸺【• CONECTADO •】⸺⸺⸺❒`))
-sock.isInit = true
-global.conns.push(sock)
+      try {
+        await conn.sendMessage(m.chat, {
+          video: { url: json.data.url },
+          fileName: json.data.filename,
+          mimetype: 'video/mp4',
+          caption: '',
+          thumbnail: json.thumbnail
+        }, { quoted: m });
+      } catch (e) {
+        console.error(`Error con la fuente de descarga:`, e.message);
+      }
 
-m?.chat ? await conn.sendMessage(m.chat, {text: args[0] ? `@${m.sender.split('@')[0]}, ya estás conectado, leyendo mensajes entrantes...` : `@${m.sender.split('@')[0]}, genial ya eres parte de nuestra familia de Sub-Bots.`, mentions: [m.sender]}, { quoted: m }) : ''
+    } else {
+      throw "Comando no reconocido.";
+    }
+  } catch (error) {
+    return m.reply(`⚠︎ Ocurrió un error: ${error.message}`);
+  }
+};
 
-}}
-setInterval(async () => {
-if (!sock.user) {
-try { sock.ws.close() } catch (e) {      
-//console.log(await creloadHandler(true).catch(console.error))
-}
-sock.ev.removeAllListeners()
-let i = global.conns.indexOf(sock)                
-if (i < 0) return
-delete global.conns[i]
-global.conns.splice(i, 1)
-}}, 60000)
+handler.command = handler.help = ['play2', 'ytmp3', 'yta', 'ytmp4', 'ytv'];
+handler.tags = ['downloader'];
+handler.group = true;
 
-let handler = await import('../handler.js')
-let creloadHandler = async function (restatConn) {
-try {
-const Handler = await import(`../handler.js?update=${Date.now()}`).catch(console.error)
-if (Object.keys(Handler || {}).length) handler = Handler
+export default handler;
 
-} catch (e) {
-console.error('⚠️ Nuevo error: ', e)
-}
-if (restatConn) {
-const oldChats = sock.chats
-try { sock.ws.close() } catch { }
-sock.ev.removeAllListeners()
-sock = makeWASocket(connectionOptions, { chats: oldChats })
-isInit = true
-}
-if (!isInit) {
-sock.ev.off("messages.upsert", sock.handler)
-sock.ev.off("connection.update", sock.connectionUpdate)
-sock.ev.off('creds.update', sock.credsUpdate)
-}
-
-sock.handler = handler.handler.bind(sock)
-sock.connectionUpdate = connectionUpdate.bind(sock)
-sock.credsUpdate = saveCreds.bind(sock, true)
-sock.ev.on("messages.upsert", sock.handler)
-sock.ev.on("connection.update", sock.connectionUpdate)
-sock.ev.on("creds.update", sock.credsUpdate)
-isInit = false
-return true
-}
-creloadHandler(false)
-})
-}
-
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
-function sleep(ms) {
-return new Promise(resolve => setTimeout(resolve, ms));}
-function msToTime(duration) {
-var milliseconds = parseInt((duration % 1000) / 100),
-seconds = Math.floor((duration / 1000) % 60),
-minutes = Math.floor((duration / (1000 * 60)) % 60),
-hours = Math.floor((duration / (1000 * 60 * 60)) % 24)
-hours = (hours < 10) ? '0' + hours : hours
-minutes = (minutes < 10) ? '0' + minutes : minutes
-seconds = (seconds < 10) ? '0' + seconds : seconds
-return minutes + ' m y ' + seconds + ' s '
+function formatViews(views) {
+  if (views >= 1000) {
+    return (views / 1000).toFixed(1) + 'k (' + views.toLocaleString() + ')';
+  } else {
+    return views.toString();
+  }
 }
