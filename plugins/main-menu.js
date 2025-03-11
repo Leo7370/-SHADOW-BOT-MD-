@@ -35,7 +35,7 @@ let menu = `𔓕꯭  ꯭ :*¨★♱𝐁𝐔𝐋𝐌𝐀-𝐁𝐎𝐓-𝐌�
 💐 ¡𝐇𝐨𝐥𝐚! 𝐂𝐨𝐦𝐨 𝐄𝐬𝐭𝐚𝐬 𝐄𝐥 𝐃𝐢𝐚 𝐃𝐞 𝐇𝐨𝐲 *${taguser}* Soy 𝐁𝐔𝐋𝐌𝐀-𝐁𝐎𝐓-𝐌𝐃 de dragón ball ${saludo}. 
 
 ┏━━⪩「 𝐈𝐍𝐅𝐎 𝐂𝐑𝐄𝐀𝐃𝐎𝐑ᚐ 」⪨
-┃✿︎ ⧼🌷⧽ *Creador:* ꧁•⊹٭BRAYAN٭⊹•꧂
+┃✿︎ ⧼🌷⧽ *Creador:* ʙʀᴀʏᴀɴ ᴏғᴄ 
 ┃✿︎ ⧼💐⧽ *Modo:* Publico
 ┃✿︎ ⧼🌷⧽ *Baileys:* Multi Device
 ┃✿︎ ⧼💐⧽ *Bot:* ${(conn.user.jid == global.conn.user.jid ? 'Oficial' : 'Sub-Bot')}
