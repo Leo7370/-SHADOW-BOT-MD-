@@ -19,7 +19,7 @@
 ### **`❕️ Información importante`**
 
 <details>
- <summary><b> 🔱 Info Bot</b></summary>
+ <summary><b> 💐 Info Bot</b></summary>
 
 * Este proyecto **no está afiliado de ninguna manera** con `WhatsApp`, `Inc. WhatsApp` es una marca registrada de `WhatsApp LLC`, y este bot es un **desarrollo independiente** que **no tiene ninguna relación oficial con la compañía**.
 
@@ -27,13 +27,13 @@
 
 ---
 
-### **`💭 Contáctanos`**
+### **`💐 Contáctanos`**
 
 <a
 href="https://wa.me/526641804242?text="><img src="https://qu.ax/ugHh.jpg" height="125px"></a>
 
 <details>
-<summary><b> 💣 Contáctos</b></summary>
+<summary><b> 💐 Contáctos</b></summary>
 
 * https://wa.me/526641804242
 
@@ -44,17 +44,17 @@ href="https://wa.me/526641804242?text="><img src="https://qu.ax/ugHh.jpg" height
 
 ---
 
-### **`⬇️ Click en la imagen para obtener termux⬇️`**
+### **`💐 Click en la imagen para obtener termux💐`**
 <a
 href="https://www.mediafire.com/file/3hsvi3xkpq3a64o/termux_118.a"><img src="https://qu.ax/finc.jpg" height="125px"></a>
 
 <div align=>
  
 
-#### **`💨 Instalación por termux`**
+#### **`💐 Instalación por termux`**
 
 <details>
- <summary><b> 👉 Click para los ver Comandos</b></summary>
+ <summary><b> 💐 Click para los ver Comandos</b></summary>
 
 #### **🪄 Instalación manual por termux**
 > copie y peguen en termux uno por uno 
@@ -96,7 +96,7 @@ Si después de instalar el bot en Termux se detiene (pantalla en blanco, pérdid
 
 ---
 
-#### **🍬 Obtener otro codigo qr en termux**
+#### **💐 Obtener otro codigo qr en termux**
 
 Si después de instalar el bot en Termux y iniciar la session del bot (el numero se va a soporte, se cierra la conexión o demorastes al conectar), sigue estos pasos:
 
