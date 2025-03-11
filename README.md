@@ -1,9 +1,9 @@
-<h1 align="center">VEGETA-BOT-V12 💨</h1>
- <p align="center">🌟 déjanos tu super estrella</p>
+<h1 align="center">BULMA-BOT-MD 🪻</h1>
+ <p align="center">🌷 déjanos tu super estrella</p>
 </p>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&lines=Bienvenido+al+Repositorio;Vegeta+-+Super+-+Bot;Gracias+por+preferirnos;Creado+por+Brayan;💨🔥+BOOM!!!;💨🔥)](https://git.io/typing-svg)
-![Vegeta](https://qu.ax/zKuno.jpg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&lines=Bienvenido+al+Repositorio;Bulma+-+Super+-+Bot;Gracias+por+preferirnos;Creado+por+Brayan;💨🔥+BOOM!!!;💨🔥)](https://git.io/typing-svg)
+![Vegeta](https://files.catbox.moe/v9cptu.jpg)
 
 > ⚜️ Versión 2.5.0
 
