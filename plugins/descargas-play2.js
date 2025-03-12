@@ -1,3 +1,4 @@
+
 import fetch from "node-fetch";
 import yts from 'yt-search';
 import axios from "axios";
@@ -153,7 +154,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
   }
 };
 
-handler.command = handler.help = ['ytmp3', 'yta', 'ytmp4', 'ytv','play2'"];
+handler.command = handler.help = ['ytmp3', 'yta', 'ytmp4', 'ytv'];
 handler.tags = ['downloader'];
 
 export default handler;
