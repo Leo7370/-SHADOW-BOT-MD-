@@ -30,18 +30,18 @@ console.log(`Error : ${e}`)
 //creador y otros
 global.creador = 'Wa.me/526731010376'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
-global.asistencia = 'Wa.me/526731010376'
-global.namechannel = '·:*¨♱𝙑𝙀𝙂𝙀𝙏𝘼_𝙎𝙐𝙋𝙀𝙍_𝘽𝙊𝙏-𝙑12♱ ¨*:·'
-global.namechannel2 = '·:*¨♱𝙑𝙀𝙂𝙀𝙏𝘼_𝙎𝙐𝙋𝙀𝙍_𝘽𝙊𝙏-𝙑12♱ ¨*:·'
-global.namegrupo = '·:*¨♱𝙑𝙀𝙂𝙀𝙏𝘼_𝙎𝙐𝙋𝙀𝙍_𝘽𝙊𝙏-𝙑12♱ ¨*:·'
-global.namecomu = '·:*¨♱𝙑𝙀𝙂𝙀𝙏𝘼_𝙎𝙐𝙋𝙀𝙍_𝘽𝙊𝙏-𝙑12♱ ¨*:·'
-global.listo = '🍬 *Aquí tienes ฅ^•ﻌ•^ฅ*'
+global.asistencia = 'Wa.me/584241836217'
+global.namechannel = '·:*¨♱𝗕𝗨𝗟𝗠𝗔-𝗕𝗢𝗧-𝗠𝗗♱ ¨*:·'
+global.namechannel2 = '·:*¨♱-𝗕𝗨𝗟𝗠𝗔-𝗕𝗢𝗧-𝗠𝗗♱ ¨*:·'
+global.namegrupo = '·:*¨♱𝗕𝗨𝗟𝗠𝗔-𝗕𝗢𝗧-𝗠𝗗♱ ¨*:·'
+global.namecomu = '·:*¨♱𝗕𝗨𝗟𝗠𝗔-𝗕𝗢𝗧-𝗠𝗗♱ ¨*:·'
+global.listo = '💐 *Aquí tienes ฅ^•ﻌ•^ฅ*'
 global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://files.catbox.moe/xr2m6u.jpg')
 
 //Ids channel
 global.idchannel = '120363323286489957@newsletter'
 global.canalIdM = ["120363323286489957@newsletter", "120363323286489957@newsletter"]
-global.canalNombreM = ["TEAM | MUNDO ANIME✰ᑲᥡ  (ꐦ ◣‸◢) 𝙼𝙰𝚁𝚃𝙸𝙽𝙴𝚉*:·", "TEAM | MUNDO ANIME✰ᑲᥡ  (ꐦ ◣‸◢) 𝙼𝙰𝚁𝚃𝙸𝙽𝙴𝚉"]
+global.canalNombreM = ["TEAM | MUNDO ANIME✰ᑲᥡ  ( ˘ ³˘)♥︎ 𝙼𝙰𝚁𝚃𝙸𝙽𝙴𝚉*:·", "TEAM | MUNDO ANIME✰ᑲᥡ  ( ˘ ³˘)♥︎ 𝙼𝙰𝚁𝚃𝙸𝙽𝙴𝚉"]
 global.channelRD = await getRandomChannel()
 
 //fechas
