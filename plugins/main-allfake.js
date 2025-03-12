@@ -36,7 +36,7 @@ global.namechannel2 = '·:*¨♱-𝗕𝗨𝗟𝗠𝗔-𝗕𝗢𝗧-𝗠𝗗♱ �
 global.namegrupo = '·:*¨♱𝗕𝗨𝗟𝗠𝗔-𝗕𝗢𝗧-𝗠𝗗♱ ¨*:·'
 global.namecomu = '·:*¨♱𝗕𝗨𝗟𝗠𝗔-𝗕𝗢𝗧-𝗠𝗗♱ ¨*:·'
 global.listo = '💐 *Aquí tienes ฅ^•ﻌ•^ฅ*'
-global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://files.catbox.moe/xr2m6u.jpg')
+global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://files.catbox.moe/kkbwnd.jpg')
 
 //Ids channel
 global.idchannel = '120363323286489957@newsletter'
@@ -58,11 +58,11 @@ global.rwait = '🕒'
 global.done = '✅'
 global.error = '✖️'
 
-//Emojis determinado de Vegeta Bot
-global.emoji = '🍧'
-global.emoji2 = '🍬'
-global.emoji3 = '🍨'
-global.emoji4 = '🍭'
+//Emojis determinado de Bulma Bot
+global.emoji = '💐'
+global.emoji2 = '🌷'
+global.emoji3 = '💐'
+global.emoji4 = '🌷'
 global.emojis = [emoji, emoji2, emoji3, emoji4].getRandom()
 
 //mensaje en espera
