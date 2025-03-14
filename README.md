@@ -2,7 +2,7 @@
  <p align="center">⚡déjanos tu super estrella🌟</p>
 </p>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&lines=Bienvenido+al+Repositorio;Bulma+-+Super+-+Bot;Gracias+por+preferirnos;Creado+por+Brayan;💨🔥+BOOM!!!;💨🔥)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&lines=Bienvenido+al+Repositorio;SHADOW+-+BOT+-+Bot;Gracias+por+preferirnos;Creado+por+Brayan;💨🔥+BOOM!!!;💨🔥)](https://git.io/typing-svg)
 ![✦☆𝗦𝗛𝗔𝗗𝗢𝗪-𝗕𝗢𝗧-𝗠𝗗☆✦](https://files.catbox.moe/v9cptu.jpg)
 
 > 💐 Versión 2.5.0
