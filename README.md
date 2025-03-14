@@ -1,9 +1,9 @@
-<h1 align="center">BULMA-BOT-MD 🪻</h1>
- <p align="center">🌷 déjanos tu super estrella</p>
+<h1 align="center">✦☆𝗦𝗛𝗔𝗗𝗢𝗪-𝗕𝗢𝗧-𝗠𝗗☆✦ 🌟</h1>
+ <p align="center">⚡déjanos tu super estrella🌟</p>
 </p>
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&lines=Bienvenido+al+Repositorio;Bulma+-+Super+-+Bot;Gracias+por+preferirnos;Creado+por+Brayan;💨🔥+BOOM!!!;💨🔥)](https://git.io/typing-svg)
-![BULMA-BOT-MD](https://files.catbox.moe/v9cptu.jpg)
+![✦☆𝗦𝗛𝗔𝗗𝗢𝗪-𝗕𝗢𝗧-𝗠𝗗☆✦](https://files.catbox.moe/v9cptu.jpg)
 
 > 💐 Versión 2.5.0
 
@@ -11,7 +11,7 @@
  
 [![Dueño](https://img.shields.io/badge/Dueño-00802f?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/526641804242)
 [![Soporte](https://img.shields.io/badge/soporte-00802f?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/584241836217)
-[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@Vegeta-bot)
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@SHADOW-bot)
 </div>
 
 ---
@@ -67,7 +67,7 @@ apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 
 ```bash
-git clone https://github.com/brayan127p/Vegeta_Super_Bot-V12 && cd Vegeta_Super_Bot-V12
+git clone https://github.com/leo7370/-SHADOW-BOT-MD- && cd -SHADOW-BOT-MD-
 ```
 
 ```bash
@@ -86,7 +86,7 @@ Si después de instalar el bot en Termux se detiene (pantalla en blanco, pérdid
 
 1. Abre Termux y navega al directorio del bot:
     ```bash
-    cd Vegeta_Super_Bot-V12
+    cd -SHADOW-BOT-MD- 
     ```
 
 2. Inicia el bot nuevamente:
@@ -102,7 +102,7 @@ Si después de instalar el bot en Termux y iniciar la session del bot (el numero
 
 1. Abre Termux y navega al directorio del bot:
     ```bash
-    cd Vegeta_Super_Bot-V12
+    cd -SHADOW-BOT-MD- 
     ```
 
 2. Elimina la carpeta MiniSession:
@@ -186,6 +186,6 @@ href="https://github.com/brayan127p"><img src="https://qu.ax/aDqOk.jpg" width="1
 
 ### **`🚀 CREDITOS`**
 <a
-href="https://github.com/Prakharper"><img src="https://github.com/Prakharper.png" width="140" height="140" alt="Prakharper"/></a>
+href="https://github.com/Prakharper"><img src="https://github.com/brayan127p.png" width="140" height="140" alt="Brayan"/></a>
 
 [© Powered By Team STARCORE ⚡︎](https://whatsapp.com/channel/0029Vb7CL7dGk1FtzTLjNt3S)
