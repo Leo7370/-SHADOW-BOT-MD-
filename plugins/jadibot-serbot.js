@@ -17,7 +17,7 @@ let crm3 = "SBpbmZvLWRvbmFyLmpz"
 let crm4 = "IF9hdXRvcmVzcG9uZGVyLmpzIGluZm8tYm90Lmpz"
 let drm1 = ""
 let drm2 = ""
-let rtx = `☆ *𝐕𝐄𝐆𝐄𝐓𝐀- 𝐒𝐔𝐏𝐄𝐑 𝐁𝐎𝐓* ☆
+let rtx = `☆ *𝗦𝗛𝗔𝗗𝗢𝗪 - 𝗕𝗢𝗧 - 𝗠𝗗* ☆
 
 ✦ *Conexión Sub-Bot Modo QR* ✦
 
@@ -29,7 +29,7 @@ let rtx = `☆ *𝐕𝐄𝐆𝐄𝐓𝐀- 𝐒𝐔𝐏𝐄𝐑 𝐁𝐎𝐓* ☆
 
 ⚠ *Este código QR expira en 45 segundos. No pierdas tiempo.*`;
 
-let rtx2 = `☆ *𝐕𝐄𝐆𝐄𝐓𝐀 - 𝐒𝐔𝐏𝐄𝐑 𝐁𝐎𝐓* ☆
+let rtx2 = `✦☆ *𝗦𝗛𝗔𝗗𝗢𝗪 - 𝗕𝗢𝗧 - 𝗠𝗗* ☆✦
 
 ✦ *Conexión Sub-Bot Modo Código* ✦
 
