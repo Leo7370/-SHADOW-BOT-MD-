@@ -28,15 +28,15 @@ let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? c
 let mentionedJid = [who]
 let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://i.ibb.co/GtYw361/Yuki.jpg')
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
-const vid = ['https://files.catbox.moe/tst02n.mp4'
-'https://files.catbox.moe/tst02n.mp4' 'https://files.catbox.moe/tst02n.mp4']
+const vid = [''
+'', '']
 
 let menu = `✦☆𝗦𝗛𝗔𝗗𝗢𝗪-𝗕𝗢𝗧-𝗠𝗗☆✦
 
 🚀 ¡𝐇𝐨𝐥𝐚! 𝐂𝐨𝐦𝐨 𝐄𝐬𝐭𝐚𝐬 𝐄𝐥 𝐃𝐢𝐚 𝐃𝐞 𝐇𝐨𝐲 *${taguser}* Soy ✦☆𝗦𝗛𝗔𝗗𝗢𝗪-𝗕𝗢𝗧-𝗠𝗗☆✦ de dragón ball ${saludo}. 
 
 ┏━━⪩「 𝐈𝐍𝐅𝐎 𝐂𝐑𝐄𝐀𝐃𝐎𝐑ᚐ 」⪨
-┃✿︎ ⧼👑⧽ *Creador:* ᴸᴱᴼ ᴼᶠᶜ 
+┃✿︎ ⧼👑⧽ *Creador:* ʟᴇᴏ ᴏғᴄ 
 ┃✿︎ ⧼👥⧽ *Modo:* Publico
 ┃✿︎ ⧼🚀⧽ *Baileys:* Multi Device
 ┃✿︎ ⧼💬⧽ *Bot:* ${(conn.user.jid == global.conn.user.jid ? 'Oficial' : 'Sub-Bot')}
@@ -494,7 +494,7 @@ let menu = `✦☆𝗦𝗛𝗔𝗗𝗢𝗪-𝗕𝗢𝗧-𝗠𝗗☆✦
 ┃🜲 >
 ┃🜲 =>
 ┗━━━━━━━━━━━━━━━━━⪨
-> © 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 ☆꧁ᑲrᥲᥡᥲᥒ꧂☆`.trim()
+> © 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 ☆꧁ʟᴇᴏ ᴏғᴄ꧂☆`.trim()
 
 await conn.sendMessage(m.chat, { video: { url: vid.getRandom() }, caption: menu, contextInfo: { mentionedJid: [m.sender], isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, newsletterName: channelRD.name, serverMessageId: -1, }, forwardingScore: 999, externalAdReply: { title: '👑 ꙰,✦☆SHADOW-BOT-MD☆✦', body: dev, thumbnailUrl: perfil, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false,
 }, }, gifPlayback: true, gifAttribution: 0 }, { quoted: null })
