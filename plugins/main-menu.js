@@ -32,7 +32,7 @@ const vid = ['https://files.catbox.moe/mo1jzw.mp4', 'https://files.catbox.moe/mo
 
 let menu = `✦☆𝗦𝗛𝗔𝗗𝗢𝗪-𝗕𝗢𝗧-𝗠𝗗☆✦
 
-🚀 ¡𝐇𝐨𝐥𝐚! 𝐂𝐨𝐦𝐨 𝐄𝐬𝐭𝐚𝐬 𝐄𝐥 𝐃𝐢𝐚 𝐃𝐞 𝐇𝐨𝐲 *${taguser}* Soy 𝐁𝐔𝐋𝐌𝐀-𝐁𝐎𝐓-𝐌𝐃 de dragón ball ${saludo}. 
+🚀 ¡𝐇𝐨𝐥𝐚! 𝐂𝐨𝐦𝐨 𝐄𝐬𝐭𝐚𝐬 𝐄𝐥 𝐃𝐢𝐚 𝐃𝐞 𝐇𝐨𝐲 *${taguser}* Soy ✦☆𝗦𝗛𝗔𝗗𝗢𝗪-𝗕𝗢𝗧-𝗠𝗗☆✦ de dragón ball ${saludo}. 
 
 ┏━━⪩「 𝐈𝐍𝐅𝐎 𝐂𝐑𝐄𝐀𝐃𝐎𝐑ᚐ 」⪨
 ┃✿︎ ⧼👑⧽ *Creador:* ᴸᴱᴼ ᴼᶠᶜ 
