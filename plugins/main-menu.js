@@ -30,7 +30,7 @@ let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://i.ib
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
 const vid = ['https://files.catbox.moe/mo1jzw.mp4', 'https://files.catbox.moe/mo1jzw.mp4', 'https://files.catbox.moe/mo1jzw.mp4']
 
-let menu = `𔓕꯭  ꯭ :*¨★♱𝐁𝐔𝐋𝐌𝐀-𝐁𝐎𝐓-𝐌𝐃♱★ ¨*:·  ꯭𔓕
+let menu = `✦☆𝗦𝗛𝗔𝗗𝗢𝗪-𝗕𝗢𝗧-𝗠𝗗☆✦
 
 🚀 ¡𝐇𝐨𝐥𝐚! 𝐂𝐨𝐦𝐨 𝐄𝐬𝐭𝐚𝐬 𝐄𝐥 𝐃𝐢𝐚 𝐃𝐞 𝐇𝐨𝐲 *${taguser}* Soy 𝐁𝐔𝐋𝐌𝐀-𝐁𝐎𝐓-𝐌𝐃 de dragón ball ${saludo}. 
 
