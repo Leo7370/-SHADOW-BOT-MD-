@@ -3,7 +3,7 @@ import axios from 'axios';
 import fetch from 'node-fetch';
 
 const handler = async (m, { conn, text, command, args, usedPrefix }) => {
-    if (!text) return conn.reply(m.chat, '🍬 Te faltó el texto para hablar con la Bot.', m);
+    if (!text) return conn.reply(m.chat, '🍬 Te faltó el texto para hablar con el Bot.', m);
 
     try {
         // await m.react(emojis);
@@ -14,7 +14,7 @@ const handler = async (m, { conn, text, command, args, usedPrefix }) => {
     }
 };
 
-handler.help = ['vegeta', 'bot'];
+handler.help = ['shadow', 'bot'];
 handler.tags = ['ai'];
 handler.register = true;
 handler.command = ['bot', 'vegeta'];
