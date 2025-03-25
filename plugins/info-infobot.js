@@ -55,31 +55,31 @@ setTimeout(resolve, 1000)
 }
 let timestamp = speed()
 let latensi = speed() - timestamp
-let Vegeta = `╭─⬣「 *Info De ${botname}* 」⬣\n`
-vegeta += `│ 👑 *Creador* : @${owner[0][0].split('@s.whatsapp.net')[0]}\n`
-vegeta += `│ 🍭 *Prefijo* : [  ${usedPrefix}  ]\n`
-vegeta += `│ 📦 *Total Plugins* : ${totalf}\n`
-vegeta += `│ 💫 *Plataforma* : ${platform()}\n`
-vegeta += `│ 🧿 *Servidor* : ${hostname()}\n`
-vegeta += `│ 🚀 *RAM* : ${format(totalmem() - freemem())} / ${format(totalmem())}\n`
-vegeta += `│ 🌟 *FreeRAM* : ${format(freemem())}\n`
-vegeta += `│ ✨️ *Speed* : ${latensi.toFixed(4)} ms\n`
-vegeta += `│ 🕗 *Uptime* : ${uptime}\n`
-vegeta += `│ 🍨 *Modo* : ${bot.public ? 'Privado' : 'Publico'}\n`
-vegeta += `│ ☁️ *Comandos Ejecutados* : ${toNum(totalStats)} ( *${totalStats}* )\n`
-vegeta += `│ 🍬 *Grupos Registrados* : ${toNum(totalchats)} ( *${totalchats}* )\n`
-vegeta += `│ 🍧 *Registrados* : ${toNum(totalreg)} ( *${totalreg}* ) Usuarios\n`
-vegeta += `╰─⬣\n\n`
-vegeta += `╭─⬣「 *Chats De ${botname}* 」⬣\n`
-vegeta += `│ 🧃 *${groupsIn.length}* Chats en Grupos\n`
-vegeta += `│ 🌸 *${groupsIn.length}* Grupos Unidos\n`
-vegeta += `│ 🍁 *${groupsIn.length - groupsIn.length}* Grupos Salidos\n`
-vegeta += `│ 💬 *${chats.length - groupsIn.length}* Chats Privados\n`
-vegeta += `│ 💭 *${chats.length}* Chats Totales\n`
-vegeta += `╰─⬣\n\n`
-vegeta += `╭─⬣「 *NodeJS Uso de memoria* 」⬣\n`
-vegeta += `${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}\n`
-vegeta += `╰─⬣`
+let Shadow = `╭─⬣「 *Info De ${botname}* 」⬣\n`
+Shadow += `│ 👑 *Creador* : @${owner[0][0].split('@s.whatsapp.net')[0]}\n`
+Shadow += `│ 🍭 *Prefijo* : [  ${usedPrefix}  ]\n`
+Shadow += `│ 📦 *Total Plugins* : ${totalf}\n`
+Shadow += `│ 💫 *Plataforma* : ${platform()}\n`
+Shadow += `│ 🧿 *Servidor* : ${hostname()}\n`
+Shadow += `│ 🚀 *RAM* : ${format(totalmem() - freemem())} / ${format(totalmem())}\n`
+Shadow += `│ 🌟 *FreeRAM* : ${format(freemem())}\n`
+Shadow += `│ ✨️ *Speed* : ${latensi.toFixed(4)} ms\n`
+Shadow += `│ 🕗 *Uptime* : ${uptime}\n`
+Shadow += `│ 🍨 *Modo* : ${bot.public ? 'Privado' : 'Publico'}\n`
+Shadow += `│ ☁️ *Comandos Ejecutados* : ${toNum(totalStats)} ( *${totalStats}* )\n`
+Shadow += `│ 🍬 *Grupos Registrados* : ${toNum(totalchats)} ( *${totalchats}* )\n`
+Shadow += `│ 🍧 *Registrados* : ${toNum(totalreg} ( *${totalreg}* ) Usuarios\n`
+Shadow += `╰─⬣\n\n`
+Shadow += `╭─⬣「 *Chats De ${botname}* 」⬣\n`
+Shadow += `│ 🧃 *${groupsIn.length}* Chats en Grupos\n`
+Shadow += `│ 🌸 *${groupsIn.length}* Grupos Unidos\n`
+Shadow += `│ 🍁 *${groupsIn.length - groupsIn.length}* Grupos Salidos\n`
+Shadow += `│ 💬 *${chats.length - groupsIn.length}* Chats Privados\n`
+Shadow += `│ 💭 *${chats.length}* Chats Totales\n`
+Shadow += `╰─⬣\n\n`
+Shadow += `╭─⬣「 *NodeJS Uso de memoria* 」⬣\n`
+Shadow += `${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}\n`
+Shadow += `╰─⬣`
 
 await conn.reply(m.chat, vegeta, fkontak, { contextInfo: { mentionedJid: [owner[0][0] + '@s.whatsapp.net'], externalAdReply: { mediaUrl: false, mediaType: 1, description: false, title: packname, body: dev, previewType: 0, thumbnail: icons, sourceUrl: redes}}})
 }
