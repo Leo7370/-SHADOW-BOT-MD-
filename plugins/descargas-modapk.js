@@ -29,7 +29,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       apkSession.set(m.chat, { app });
 
       // Descripción de la aplicación
-      let description = `⌘━─━─≪ *BOT VEGETA ™* ≫─━─━⌘\n`;
+      let description = `⌘━─━─≪ *Shadow - Bot ™* ≫─━─━⌘\n`;
       description += `➷ *Nombre:* ${app.name}\n`;
       description += `➷ *Desarrollador:* ${app.developer}\n`;
       description += `➷ *ID:* ${app.id}\n`;
