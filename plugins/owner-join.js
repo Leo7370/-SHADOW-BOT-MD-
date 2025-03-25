@@ -13,7 +13,7 @@ let handler = async (m, { conn, text, isOwner }) => {
             .catch(err => m.reply(`⚠️ Error al unirme al grupo.`));
     } else {
         let message = `🍭 Invitación a un grupo:\n${text}\n\nPor: @${m.sender.split('@')[0]}`;
-        await conn.sendMessage('584120346669' + '@s.whatsapp.net', { text: message, mentions: [m.sender] }, { quoted: m });
+        await conn.sendMessage('526633900512' + '@s.whatsapp.net', { text: message, mentions: [m.sender] }, { quoted: m });
         m.reply(`🍬 El link del grupo ha sido enviado, gracias por tu invitacion *ฅ^•ﻌ•^ฅ*`);
     }
 };
